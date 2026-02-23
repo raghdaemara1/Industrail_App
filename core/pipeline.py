@@ -118,6 +118,35 @@ class BulkUploadPipeline:
         log("Step 4B: Saving Document Cache to Local HDD.")
         self.file_store.save_file(md5, file_bytes)
 
+        # Step 5 — DOCUMENT INTELLIGENCE BUILD
+        if alarms_extracted:
+            log("Step 5A: Building Keyword Search Index (BM25)...")
+            try:
+                from search.bm25_index import BM25AlarmIndex
+                idx = BM25AlarmIndex()
+                idx.build([a.dict() for a in alarms_extracted])
+                log("BM25 Index compiled successfully.")
+            except Exception as e:
+                log(f"BM25 build failed: {e}")
+
+            log("Step 5B: Building Semantic Search Index (ChromaDB + SentenceTransformers)...")
+            try:
+                from search.vector_index import VectorAlarmIndex
+                idx = VectorAlarmIndex()
+                idx.add_alarms([a.dict() for a in alarms_extracted])
+                log("Semantic Vector Index updated successfully.")
+            except Exception as e:
+                log(f"Vector Index build failed: {e}")
+
+            log("Step 5C: Building Graph Database Index (NetworkX)...")
+            try:
+                from search.graph_index import AlarmGraph
+                idx = AlarmGraph()
+                idx.build([a.dict() for a in alarms_extracted])
+                log("Knowledge Graph Entity map updated.")
+            except Exception as e:
+                log(f"Graph Index build failed: {e}")
+
         log("Pipeline Completely Resolved.")
 
         return ExtractionResult(

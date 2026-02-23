@@ -71,16 +71,10 @@ with tab1:
                         st.dataframe(param_df, use_container_width=True)
 
                     if res.alarms or res.parameters:
-                        with st.spinner("Generating 13-Tab Spreadsheet..."):
-                            pe = PhaseEngine(machine, res.source_text, res.alarms, res.parameters)
-                            # Phases 1, 2, 3 as per CLAUDE.md
-                            tabs_data = pe.build(phases=[1, 2, 3])
-                            
-                            sg = SpreadsheetGenerator()
-                            for tname, rows in tabs_data.items():
-                                sg.populate_rows(tname, rows)
-                                
-                            out_path = sg.save(machine)
+                        with st.spinner("Service Layer: ExtractionAgent is mapping and generating spreadsheet..."):
+                            from service.extraction_agent import ExtractionAgent
+                            agent = ExtractionAgent()
+                            out_path = agent.generate_excel(machine, res.source_text, res.alarms, res.parameters)
                             
                         st.success(f"Spreadsheet generated locally at: {out_path}")
                         

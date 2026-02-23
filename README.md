@@ -51,26 +51,22 @@ This diagram illustrates how the system layers interact with each other for data
 
 ```mermaid
 graph TD
-    UI[Streamlit UI] -->|Upload PDF| Pipeline[BulkUploadPipeline]
+    UI[APP LAYER: Streamlit UI] -->|Upload PDF| DI[DOC INTELLIGENCE]
     
-    subgraph Core Processing
-        Pipeline --> Fingerprint[MD5 Deduplication]
-        Fingerprint --> Parser[PDF Parser: pdfplumber/PyPDF2]
+    subgraph Doc Intelligence Platform
+        DI --> Parser[PDF Parser: pdfplumber/Docling]
         Parser --> Extractor[Regex / LLM Extractor]
-        Extractor --> Classifier[Reason Classifier]
+        Extractor --> DB[(Structured DB: MongoDB)]
+        Extractor --> Index[Search Indices: BM25 / Vector / Graph]
     end
     
-    subgraph Data Store
-        Classifier --> DB[(MongoDB Storage)]
-        Extractor --> DB
+    subgraph Service Layer
+        DB --JSON--> Agent[Extraction Agent]
+        Agent --> Mapper[Schema Mapper & Tab Builder]
+        Mapper --> SG[Spreadsheet Generator]
     end
     
-    subgraph Output & Analytics
-        DB --> SG[Spreadsheet Generator]
-        DB --> Search[Search Layer: BM25 / Vector / Graph]
-        DB --> Analytics[Fault Analytics]
-        SG --> XLS[13-Tab Excel Download]
-    end
+    SG -->|Excel file .xlsx| UI
 ```
 
 ### 2. End-to-End Execution Pipeline
@@ -80,32 +76,20 @@ Here is the exact step-by-step process of how an uploaded PDF turns into structu
 ```mermaid
 sequenceDiagram
     actor User
-    participant Streamlit as User Interface
-    participant Pipeline as Processing Pipeline
-    participant DB as MongoDB
-    participant LLM as Ollama/Groq Model
-    participant Excel as Spreadsheet Generator
+    participant App as App Layer (UI)
+    participant DI as Doc Intelligence
+    participant Agent as Service Layer (ExtractionAgent)
     
-    User->>Streamlit: Upload PDF Manual
-    Streamlit->>Pipeline: start processing
-    Pipeline->>DB: Check MD5 format cache
-    alt Cache Hit
-        DB-->>Pipeline: Return stored alarms/parameters
-    else Cache Miss
-        Pipeline->>Pipeline: Parse Text (pdfplumber)
-        Pipeline->>Pipeline: Classify Section (Regex)
-        opt Has Alarms
-            Pipeline->>LLM: Extract & Classify Reasons
-            LLM-->>Pipeline: Structured JSON & Categories
-        end
-        opt Has Parameters
-            Pipeline->>Pipeline: Extract Specs & Filter Noise
-        end
-        Pipeline->>DB: Upsert Records (No Duplicates)
-    end
-    Pipeline->>Excel: Generate Phase Sheets
-    Excel-->>Streamlit: Master_Bulk_Upload_Results.xlsx
-    Streamlit-->>User: Provide Download Link
+    User->>App: Upload PDF Manual
+    App->>DI: Send PDF to pipeline
+    DI->>DI: Parse Text & Classify (Regex/LLM)
+    DI->>DI: Store JSON in MongoDB
+    DI->>DI: Build Indices (BM25, Vector, Graph)
+    DI-->>Agent: Pass Structured JSON payload
+    Agent->>Agent: Extract & map fields to tabs
+    Agent->>Agent: Generate .xlsx spreadsheet
+    Agent-->>App: Master_Bulk_Upload_Results.xlsx
+    App-->>User: Provide Download Link
 ```
 
 ---
