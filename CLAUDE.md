@@ -65,15 +65,16 @@ project/
 │   └── phase_engine.py                <- PhaseEngine: builds tab payloads per phase
 │
 ├── extractors/
-│   ├── local_llm_extractor.py         <- LocalLLMExtractor + ReasonClassifier (Ollama)
+│   ├── llm_extractor.py               <- LLMClassifier: JSON output, confidence, needs_review (PRIMARY)
+│   ├── local_llm_extractor.py         <- LocalLLMExtractor + ReasonClassifier (legacy fallback)
 │   └── parameter_specs_extractor.py   <- ParameterSpecsExtractor (regex + Ollama fallback)
 │
-├── search/                            <- NEW: add these files for demo search layer
+├── search/
 │   ├── bm25_index.py                  <- rank_bm25 keyword index
 │   ├── vector_index.py                <- sentence-transformers + chromadb
 │   └── graph_index.py                 <- networkx alarm -> component -> machine graph
 │
-├── analytics/                         <- NEW: add for demo analytics
+├── analytics/
 │   └── fault_analytics.py             <- scikit-learn: top faults, anomaly detection
 │
 ├── config.py                          <- All env vars: OLLAMA_MODEL, MONGODB_URI, etc.

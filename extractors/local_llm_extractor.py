@@ -119,8 +119,10 @@ class ReasonClassifier:
         return result
 
 class LocalLLMExtractor:
-    def __init__(self):
-        self.classifier = ReasonClassifier()
+    def __init__(self, classifier=None):
+        # Accept an injected classifier (e.g. LLMClassifier from llm_extractor.py).
+        # Falls back to ReasonClassifier when none is provided.
+        self.classifier = classifier if classifier is not None else ReasonClassifier()
     def extract_alarms(self, text: str) -> list:
         alarms = []
         chunks = self._chunk_text(text)
