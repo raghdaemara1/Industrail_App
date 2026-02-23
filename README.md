@@ -1,9 +1,23 @@
-# O3Sigma Master Bulk Upload Generator
+# Industrail_App: Enterprise Document Intelligence Platform
 
-![O3Sigma Architecture](https://img.shields.io/badge/Architecture-Local%20%2F%20Free-blue)
+![Architecture](https://img.shields.io/badge/Architecture-Enterprise%20Ready-blue)
 ![Python Version](https://img.shields.io/badge/Python-3.12+-green)
+![Data Flow](https://img.shields.io/badge/Data%20Flow-Parallel%20Processing-purple)
 
-> A free, local, and extensible application designed to automate the process of converting machine PDF manuals (fault guides, parameter sheets) into a structured 13-tab O3Sigma Master Bulk Upload spreadsheet.
+## 🌟 Production System Architecture
+This repository contains the blueprints and the local demo of a **highly scalable, multi-engine Enterprise Document Intelligence Platform**.
+
+In production, this system automates the extraction of complex industrial data from unstructured machine PDF manuals (fault guides, parameter sheets) into a structured 13-tab Master Bulk Upload spreadsheet. It processes unstructured PDFs through a 5-layer pipeline: Extract, Index, Search, Map, and Generate.
+
+🚨 **[View the Interactive Production Dataflow Diagram Here](https://htmlpreview.github.io/?https://github.com/raghdaemara1/Industrail_App/blob/main/system_dataflow.html)** 🚨
+
+*Please click the link above to see the full multi-engine architecture (Snowflake Cortex, Neo4j, OpenSearch, Azure Blob, MongoDB) that powers the production version of this tool.*
+
+---
+
+## 💻 Local Air-Gapped Demo (This Repository)
+
+Because the full production stack requires expensive enterprise cloud resources, this repository is pre-configured with a **Free & Local Tool Stack** that mirrors the production architecture perfectly. This allows anyone to run and test the exact same dataflow logic locally, at zero cost.
 
 ## 📖 Overview
 
@@ -25,11 +39,15 @@ It reads PDF documents, extracts every alarm and parameter record, intelligently
 
 ---
 
-## 🏗️ System Architecture & Workflow
+## 🏗️ Enterprise System Architecture
 
-### 1. High-Level Architecture Flow
+Our production environment utilizes a distributed, multi-engine architecture designed for maximum search performance and ML capabilities. We process unstructured PDFs through a 5-layer pipeline: Extract, Index, Search, Map, and Generate.
 
-This diagram illustrates how the system layers interact with each other.
+**Interactive Platform Diagram:** Please view the `system_dataflow.html` file in this repository (or via the link above) for the full 5-way parallel processing data flow.
+
+### 1. High-Level Processing Flow
+
+This diagram illustrates how the system layers interact with each other for data extraction and classification.
 
 ```mermaid
 graph TD
@@ -134,20 +152,21 @@ You can run this entire stack locally with free tools.
 
 ---
 
-## 🛠️ Technology Stack Breakdown
+## 🛠️ Technology Stack: Production vs. Local Demo
 
-The application is built so every production tool is completely swappable with a free/local equivalent via the `.env` configuration.
+To deploy or test this application effortlessly, the architecture is fully swappable via the `.env` configuration.
 
-| Component | Production / Paid | Local / Free Replacement (Used in Demo) |
+This guarantees the application can run in a completely air-gapped environment while proving the exact same logic used in production.
+
+| Component | Production Stack (Enterprise) | Local Demo Equivalent (This Repo) |
 | :--- | :--- | :--- |
-| **Frontend UI** | Streamlit | Streamlit |
-| **PDF Parsing** | LlamaParse / Docling | pdfplumber + PyPDF2 fallback |
-| **LLM Classification** | Cortex LLM / GPT-4 | Ollama (llama3.2:3b) or Groq API |
-| **Structured Database**| MongoDB Atlas | MongoDB Community Edition |
+| **PDF Parsing** | LlamaParse / Docling | `pdfplumber` + `PyPDF2` fallback |
+| **LLM Classification** | Cortex LLM / GPT-4 | `Ollama (llama3.2:3b)` or `Groq` API |
+| **Structured Database**| MongoDB Atlas | Local MongoDB Community |
 | **File Object Store**| Azure Blob Storage | Local filesystem (`pdf_store`) |
 | **Keyword Search** | AWS OpenSearch | `rank_bm25` (In-memory Python) |
-| **Semantic Search**| Cortex / k-NN | `chromadb` + Sentence-Transformers |
-| **Graph Database** | Neo4j | `networkx` |
+| **Semantic Search**| Cortex / k-NN | `chromadb` + `sentence-transformers` |
+| **Graph Database** | Neo4j | `networkx` (In-memory graph) |
 | **Analytics Engine** | Snowflake Cortex AI | `scikit-learn` + `pandas` |
 
 ---

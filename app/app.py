@@ -11,9 +11,9 @@ from core.phase_engine import PhaseEngine
 from core.spreadsheet_generator import SpreadsheetGenerator
 from config import DEFAULT_MACHINE, REASON_CLASSIFICATION_MODE
 
-st.set_page_config(page_title="O3Sigma Bulk Upload", layout="wide")
+st.set_page_config(page_title="Industrail_App", layout="wide")
 
-st.title("O3Sigma Master Bulk Upload Generator")
+st.title("Industrail_App")
 st.markdown("> Free Local Architecture Demo")
 
 db = DatabaseManager()
