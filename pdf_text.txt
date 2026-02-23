@@ -1,0 +1,234 @@
+ALLROUNDER 570 A
+Distance between tie bars: 570 x 570 mm
+Clamping force: 2000 kN
+Injection unit (acc. to EUROMAP): 400, 800, 1300
+451
+551
+2
+7691
+8041
+058
+033
+625 24006)
+1287 825
+51681) 55682)3) 63684)5)
+1622
+5022
+051 1000
+0871
+049
+108
+MACHINE DIMENSIONS | 570 A
+53091) 57433) 59962) 65764) 67195)
+Electrical connection
+Cooling water connection
+273
+.xam
+1) Injection unit 400
+2) Injection unit 800 COMFORT
+3) Injection unit 800 PREMIUM / ULTIMATE
+4) Injection unit 1300 COMFORT / PREMIUM
+5) Injection unit 1300 ULTIMATE
+6) Control cabinet length can vary depending on the power
+and size of the injection unit
+TECHNICAL DATA | 570 A
+Clamping unit 570 A
+with clamping force max.kN 2000
+Opening force | stroke max.kN | mm --- | 450
+Mould height, fixed | variable min.-max.mm --- |250-550
+Platen daylight fixed | variable max.mm --- |700-1000
+Distance between tie bars (w x h) mm 570x570
+Mould mounting platens (w x h) max.mm 795x795
+Weight of movable mould half max.kg 1300
+Ejector force | stroke max.kN | mm 60 |200
+Dry cycle time EUROMAP Comfort min.s - mm 1,8-399
+Premium min.s - mm 1,5-399
+Ultimate min.s - mm 1,2-399
+Injection unit 400 800 1300
+with screw diameter mm 35 40 45 45 50 55 55 60 70
+Effective screw length L/D 23 20 18 22 20 18 22 20 17
+Screw stroke max.mm 160 200 240
+Calculated stroke volume max.cm³ 154 201 254 318 392 474 570 678 923
+Shot weight max.g PS 141 184 232 291 359 434 521 620 844
+Material throughput max.kg/h PS 25 29 35 46 53 59 86 96 115
+max.kg/h PA6.6 12,5 15 17,5 23 27 30 43 48 58
+Injection pressure max.bar 2500 2000 1580 2470 2000 1650 2380 2000 1470
+Holding pressure time max.s - bar 300-2090 300-1600 300-1260 300-1980 300-1600 300-1320 300-1900 300-1600 300-1170
+Injection flow ² Comfort [+] max.cm³/s 125 [163] 163 [213] 207 [271] 175 [239] 216 [295] 261 [356] 261 [356] 311 [424] 423 [577]
+Premium max.cm³/s 163 213 271 239 295 356 356 424 577
+Ultimate [+] max.cm³/s 241 [313] 314 [408] 398 [517] 318 [477] 394 [591] 476 [714] 475 565 770
+Injection speed ⁵ Comfort [+] max.mm/s 190 [240] 150 [200] 110 [150]
+Premium max.mm/s 240 200 200
+Ultimate [+] max.mm/s 300 [325] 240 [300] 200
+Screw circumferential speed max.m/min 53 60 68 54 60 66 55 60 70
+Screw torque max.Nm 480 550 610 900 1000 1100 1510 1640 1920
+Nozzle contact force | retraction stroke max.kN | mm 60 |300 70 |400 90 |500
+Heating capacity | zones kW 9,7 |5 19,9 |8 22,9 |8
+Feed hopper l --- --- ---
+Drive and connection Comfort Premium Ultimate
+with injection unit 400 800 1300 400 800 1300 400 800 1300
+Net weight of machine kg 8850 9650 10850 8850 9650 10850 8850 9650 10850
+Sound press. level | Insecurity ⁴ dB(A) 63 | 3 63 | 3 63 | 3
+Electrical connection ³ kW 30 49 65 35 53 69 35 53 69
+Total A 80 125 160 100 125 160 100 125 160
+Machine A --- --- ---
+Heating A --- --- ---
+Cooling water connection max.°C 30 30 30
+min.Δp bar 1,5 |DN 25 1,5 |DN 25 1,5 |DN 25
+Machine type Upon request: other machine types and mould installation heights, screws, drive powers etc.
+All specifications relate to the basic machine version. Deviations are possible depending on variants, process settings and
+with EUROMAP size designation ¹ material type. Depending on the drive, certain combinations, e.g. max. injection pressure and max. injection flow may be
+mutually exclusive.
+570 A 2000-400 | 800 | 1300
+1) Clamping force (kN) - size of injection unit = max. stroke volume (cm³) x max. injection pressure (kbar)
+2) Specification of maximum injection flow at maximum injection pressure.
+3) Specifications relate to 400 V/50 Hz.
+4) Emission sound pressure level at the workplace. Detailed information in the operating instructions.
+5) Forward speed of plasticising screw at 1000 bar injection pressure.
+[ ] Specifications apply to alternative equipment.
+3
+US DIN
+NID
+US DIN
+SU
+SU
+NID
+4
+5,314 324
+350-1
+a)
+7H521Ø
+175
+35
+007 024
+32,5
+97,5
+28Ø 46Ø 34Ø
+001
+10
+°04
+)3541Ø
+)2521Ø
+)1011Ø
+)357
+)207Ø
+)156Ø
+3
+15-0,1
+201)2) 153)
+1,0-54Ø
+73Ø
+0°
+3
+21
+54Ø
+MOULD INSTALLATION DIMENSIONS | 570 A
+C
+Stroke max. 200
+X Y
+a max. Injection unit
+400 / 800 1300
+B A Standard 50 60
+Mould installation height
+Thermoset 50 60
+Stroke max. 450 max. 700 - 1000 min.-max. 250-550
+Ejector bolt | X Bore in mould (if required) | Y
+43,5
+Injection unit 4001) / 8002) / 13003)
+Thermoset version
+Closing force for spring moulds / Robotic system mounting | C
+during injection compression moulding*
+1600
+1400
+1200
+1000
+M8-16 deep
+800
+600
+400
+200
+0
+0 20 40 60 80 100 120
+M20-39 deep
+]Nk[
+ecrof
+gnisolC
+Mould stroke [mm]
+* automatic locking force adjustment up to 30 kN
+DIN US
+NID
+DIN US
+SU
+SU
+NID
+5
+7H521Ø
+005
+140
+280
+350
+420
+490
+560
+630
+036 065 094 024 053 082 041
+1000
+329
+555 655
+066
+)1725
+435
+518
+660
+815
+)1234
+6681) 7681)
+710 810
+075
+09Ø
+MOULD INSTALLATION DIMENSIONS | 570 A
+Fixed mould mounting platen | A
+Bores for ARBURG mechanical M16-31 deep
+mould rapid clamping system
+Moving mould mounting platen | B
+570
+1) Dimensions are valid for a distance between
+mould mounting platens of 960 mm or more
+SHOT WEIGHTS | 570 A
+Theoretical shot weights for the most important injection moulding materials
+Injection units according to EUROMAP 400 800 1300
+Screw diameter mm 35 40 45 45 50 55 55 60 70
+Polystyrene max. g PS 141 184 232 291 359 434 510 607 826
+Styrene heteropolymerizates max. g SB 137 179 227 284 350 424 498 593 807
+max. g SAN, ABS1) 135 176 223 278 344 416 488 581 791
+Cellulose acetate max. g CA1) 158 207 262 327 404 488 574 683 930
+Celluloseacetobutyrate max. g CAB1) 147 192 243 304 375 454 534 635 865
+Polymethyl methacrylate max. g PMMA 145 190 240 300 371 449 527 627 854
+Polyphenylene ether, mod. max. g PPE 131 171 216 270 333 403 473 563 767
+Polycarbonate max. g PC 148 193 244 305 377 456 536 638 868
+Polysulphone max. g PSU 153 199 252 316 390 471 554 659 897
+Polyamides max. g PA 6.6 | PA 61) 140 183 231 289 357 431 507 603 821
+max. g PA 6.10 | PA 111) 131 171 216 270 333 403 473 563 767
+Polyoximethylene (Polyacetal) max. g POM 174 227 287 359 443 536 630 749 1020
+Polyethylene terephthalate max. g PET 167 219 277 346 427 517 607 723 984
+Polyethylene max. g PE-LD 106 139 176 219 271 328 385 458 624
+max. g PE-HD 110 143 181 227 280 339 398 473 644
+Polypropylene max. g PP 112 146 185 232 286 346 406 484 658
+Fluorpolymerides max. g FEP, PFA, PCTFE1) 225 294 372 465 574 695 816 971 1322
+max. g ETFE 196 256 324 408 504 609 716 852 1160
+Polyvinyl chloride max. g PVC-U 170 222 281 351 434 525 616 734 998
+max. g PVC-P1) 157 205 260 324 401 485 569 678 922
+1) average value
+ARBURG GmbH + Co KG
+Arthur-Hehl-Strasse
+72290 Lossburg
+Tel.: +49 7446 33-0
+www.arburg.com
+contact@arburg.com
+© 2026 ARBURG GmbH + Co KG | All data and technical information have been compiled with great care. However we accept no responsibility for correctness. Individual illustrations and
+information may deviate from the actual delivery condition of the machine. The relevant valid operating instructions are applicable for the installation and operation of the machine.
+snoitaretla
+ot
+tcejbuS
+·
+620230_BG_NE_290086

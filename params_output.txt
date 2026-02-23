@@ -1,0 +1,6 @@
+Total params extracted: 5
+{'description': 'ALLROUNDER', 'target': 570.0, 'unit': 'A', 'lsl': None, 'usl': None, 'machine': None, 'parameter_code': None, 'section': None, 'product_desc': None}
+{'description': 'Injection unit', 'target': 1300.0, 'unit': 'ULTIMATE', 'lsl': None, 'usl': None, 'machine': None, 'parameter_code': None, 'section': None, 'product_desc': None}
+{'description': 'Clamping unit', 'target': 570.0, 'unit': 'A', 'lsl': None, 'usl': None, 'machine': None, 'parameter_code': None, 'section': None, 'product_desc': None}
+{'description': 'Specifications relate to', 'target': 400.0, 'unit': 'V', 'lsl': None, 'usl': None, 'machine': None, 'parameter_code': None, 'section': None, 'product_desc': None}
+{'description': 'mould mounting platens of', 'target': 960.0, 'unit': 'mm', 'lsl': None, 'usl': None, 'machine': None, 'parameter_code': None, 'section': None, 'product_desc': None}
