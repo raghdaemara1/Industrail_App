@@ -1,0 +1,27 @@
+# Development environments
+.venv/
+venv/
+env/
+.env
+
+# Cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Application generated files
+pdf_store/
+output/
+analytics/data/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+
+# Ignore SQLite db if any
+*.sqlite3

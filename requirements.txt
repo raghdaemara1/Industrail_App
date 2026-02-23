@@ -1,0 +1,24 @@
+streamlit>=1.35
+pydantic>=2.5
+python-dotenv
+pdfplumber
+PyPDF2
+pymongo
+openpyxl
+
+# LLM backends
+ollama>=0.4
+groq
+
+# Free search replacements
+rank_bm25
+sentence-transformers
+chromadb
+
+# Free analytics
+scikit-learn
+pandas
+
+# Free graph
+networkx
+neo4j
