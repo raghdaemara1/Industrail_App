@@ -6,6 +6,7 @@ from core.schemas import ExtractionResult, AlarmRecord, ParameterRecord
 from core.file_store import FileStore
 from config import EXTRACTION_VERSION
 from extractors.local_llm_extractor import LocalLLMExtractor
+from extractors.llm_extractor import LLMClassifier
 from extractors.parameter_specs_extractor import ParameterSpecsExtractor
 from core.phase_engine import PhaseEngine
 
@@ -13,7 +14,10 @@ class BulkUploadPipeline:
     def __init__(self, db: DatabaseManager):
         self.db = db
         self.file_store = FileStore()
-        self.alarm_extractor = LocalLLMExtractor()
+        # LLMClassifier is the primary classifier (JSON output, confidence scores).
+        # LocalLLMExtractor falls back to ReasonClassifier only if LLMClassifier
+        # is not injected — so ReasonClassifier is now the legacy fallback.
+        self.alarm_extractor = LocalLLMExtractor(classifier=LLMClassifier())
         self.param_extractor = ParameterSpecsExtractor()
 
     def process_pdf(self, file_bytes: bytes, filename: str, machine: str, force_reprocess: bool = False, log_callback=None) -> ExtractionResult:

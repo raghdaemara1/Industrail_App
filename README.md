@@ -28,7 +28,7 @@ It reads PDF documents, extracts every alarm and parameter record, intelligently
 ## 🚀 Key Features
 
 *   **PDF Parsing**: robust layout-preserving extraction (using `pdfplumber` and `PyPDF2`).
-*   **Intelligent Extraction & Classification**: Regex-first extraction with LLM fallback (Ollama or Groq free tier) to handle complex, messy PDF data.
+*   **Intelligent Extraction & Classification**: Regex-first extraction with structured-JSON LLM classification (`LLMClassifier` — confidence scores + `needs_review` flag). LLM backends: Ollama (local) or Groq free tier. Set `REASON_CLASSIFICATION_MODE=heuristic` for zero-dependency keyword-only mode.
 *   **Database Integration**: Local MongoDB storage ensures continuous history, deduplication via document fingerprinting, and quick retrievals.
 *   **Advanced Data Search**:
     *   *Keyword Search*: BM25 in-memory index for exact match search.
@@ -159,8 +159,8 @@ This guarantees the application can run in a completely air-gapped environment w
 
 1. **Upload & Process:** Open the app and go to the first tab. Set your target Machine Name, upload the PDF, and click **Extract Data & Generate**. The app will provide live trace logs of the extraction via LLM/Regex.
 2. **Download Excel:** Once completed, a button to download the `Master_Bulk_Upload_Results.xlsx` file will appear.
-3. **Search & Review:** Use the second tab to search your knowledge base of alarms (using Keyword, Semantic Vector, or Graph mappings).
-4. **History & Analytics:** Head to the third tab to view previously uploaded files, delete cached memory, and review global fault analytics.
+3. **Search & Review:** Use the second tab to search your stored alarms using Keyword (BM25), Semantic (ChromaDB vector), or Graph (NetworkX) search. This is a working but basic implementation — full OpenSearch/Neo4j integration is in the Phase 2 roadmap (see below).
+4. **History & Analytics:** Head to the third tab to view previously uploaded files, delete cached memory, and review global fault analytics. Basic analytics (top categories, electrical fault rate) are live; advanced anomaly detection is Phase 2.
 
 ---
 
@@ -168,3 +168,36 @@ This guarantees the application can run in a completely air-gapped environment w
 
 * **Configuration**: Key behaviors and thresholds are controlled in `.env` and `config.py`.
 * **Adding new Excel Tabs**: Driven through `core/phase_engine.py` and defined within `schemas.py` without requiring massive structural changes.
+
+---
+
+## 🗺️ Roadmap
+
+### Phase 1 — Current (this repository)
+| Feature | Status |
+| :--- | :--- |
+| PDF parsing (pdfplumber + PyPDF2) | ✅ Live |
+| Regex-first alarm extraction | ✅ Live |
+| Structured JSON LLM classification (`LLMClassifier`) | ✅ Live |
+| MongoDB storage + MD5 deduplication | ✅ Live |
+| BM25 keyword search | ✅ Live (basic) |
+| ChromaDB semantic search | ✅ Live (basic) |
+| NetworkX graph search | ✅ Live (basic) |
+| Basic fault analytics (pandas) | ✅ Live (basic) |
+| Excel generation (Machine Details, Downtime, Parameter Specs, OEE) | ✅ Live |
+
+### Phase 2 — Q2 2026
+| Feature | Status |
+| :--- | :--- |
+| Full 13-tab Excel output (Products, Waste, Crew, Checklists, Users) | 🔜 Planned |
+| LlamaParse / Docling for complex scanned PDFs | 🔜 Planned |
+| Batch upload (multiple machines at once) | 🔜 Planned |
+| Production search: OpenSearch (replaces BM25 + ChromaDB) | 🔜 Planned |
+| Production graph: Neo4j (replaces NetworkX) | 🔜 Planned |
+| Advanced anomaly detection (scikit-learn IsolationForest) | 🔜 Planned |
+
+### Phase 3 — Q4 2026
+| Feature | Status |
+| :--- | :--- |
+| Doc Intelligence platform API replaces local parsers | 🔜 Planned |
+| Snowflake Cortex LLM + Azure Blob + MongoDB Atlas full cloud stack | 🔜 Planned |
